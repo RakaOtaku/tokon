@@ -58,7 +58,7 @@ class TransaksiController extends Controller
         $show = Transaksi::where('user_name', $user_name)->get();
         if($show){
             return response()->json([
-                "message" => "Success",
+                "message" => "Transaksi yang sedang berlangsung :",
                 "data" => $show 
             ]);
         }else{

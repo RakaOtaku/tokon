@@ -58,11 +58,10 @@ class PaymentController extends Controller
      */
     public function show($id)
     {
-        $show = Product::where('nama_pembayaran', 'like', '%' . $id . '%')->get();
+        $show = Payment::where('nama_pembayaran', 'like', '%' . $id . '%')->get();
         if($show){
             return response()->json([
-                "message" => " Payment : ",
-                "data" => $show 
+                "Payment" => $show 
             ]);
         }else{
             return ["message" => "Data not found"];
